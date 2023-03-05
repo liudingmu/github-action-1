@@ -1,0 +1,12 @@
+name: A workflow for my Hello World file
+on: push
+
+jobs:
+  build:
+    name: Hello world action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1   #表示执行一个checkout的actions，它是github预先定义好的一个actions或者是step，它会克隆我们最新项目的代码。
+      - uses: ./action-a            #表示要使用/action-a这个目录。
+        with: 
+          MY_NAME: "Mona"           #然后这个目录里面有这个环境变量
